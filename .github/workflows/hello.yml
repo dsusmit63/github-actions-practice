@@ -19,10 +19,10 @@ jobs:
         run: date
 
       - name: Print the name of triggering branch
-        run: echo "Triggered by branch: ${{ github.ref_name }}"
+        run: echo "Triggered by branch ${{ github.ref_name }}"
 
       - name: List the files
         run: ls -la
 
       - name: Print runner's OS
-        run: echo "Runner's OS: $RUNNER_OS"
+        run: echo "Runner's OS $RUNNER_OS"
