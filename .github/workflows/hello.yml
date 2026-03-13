@@ -26,3 +26,6 @@ jobs:
 
       - name: Print runner's OS
         run: echo "Runner's OS $RUNNER_OS"
+
+      - name: Test failure
+        run: exit 1
