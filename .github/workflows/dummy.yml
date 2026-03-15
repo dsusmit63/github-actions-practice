@@ -18,12 +18,10 @@ jobs:
         run: hostname
       - name: Print current user
         run: whoami
-        
-      - if [ ${{ matrix.os }} == "ubuntu-latest" ]; then
-          name: Check pre-installed softwares
-          run: |
-             echo "Docker version $(docker --version)"
-             echo "Python version $(python --version)"
-             echo "Node version $(node --version)"
-             echo "Git version $(git --version)"
-        fi
+      - name: Print tool versions (ubuntu-only)
+        if: ${{ matrix.os }} == 'ubuntu-latet'
+        run: |
+          echo "Docker version $(docker --version)"
+          echo "Python version $(python --version)"
+          echo "Node version $(node --version)"
+          echo "Git version $(git --version)"
