@@ -20,7 +20,7 @@ jobs:
         run: whoami
       - name: Check pre-installed tools in ubuntu-latest
         run: |
-          if [ $RUNNER_OS == "Linux" ]; then
+          if [ ${{ matrix.os }} == "ubuntu-latest" ]; then
             echo "Docker version $(docker --version)"
             echo "Python version $(python --version)"
             echo "Node version $(node --version)"
