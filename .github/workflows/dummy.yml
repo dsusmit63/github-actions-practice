@@ -18,9 +18,9 @@ jobs:
         run: hostname
       - name: Print current user
         run: whoami
-      - name: Check pre-installed tools
+      - name: Check pre-installed tools in ubuntu-latest
         run: |
-          if [ "${{ runner.os }}" == "Linux" ]; then
+          if [ $RUNNER_OS == "Linux" ]; then
             echo "Docker version $(docker --version)"
             echo "Python version $(python --version)"
             echo "Node version $(node --version)"
