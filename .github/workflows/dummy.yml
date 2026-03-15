@@ -18,3 +18,10 @@ jobs:
         run: hostname
       - name: Print current user
         run: whoami
+      - name: Check pre-installed tools
+        run: |
+          if [ ${{ runner.os }} == "ubuntu" ]; then
+            echo "Docker version $(docker --version)"
+            echo "Python version $(python --version)"
+            echo "Node version $(node --version)"
+            echo "Git version $(git --version)"
